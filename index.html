@@ -3,9 +3,9 @@
 <!-- Application Structure Plan: A single-page application structured as a professional proposal packet. A tab-based navigation at the top allows the user to switch between four distinct sections: Cover, Financial Model, Specifications & UX, and Partnership. This structure provides a clear, organized flow for the client. -->
 <!-- Visualization & Content Choices:
      - Cover Page: Clean, professional text layout with the new blue and white color scheme.
-     - Financial Model: Interactive Chart.js doughnut chart to visualize the new 50/50 profit split. Sliders for price and utilization allow the client to explore revenue scenarios. Includes a profit-per-square-foot calculator.
+     - Financial Model: Interactive Chart.js doughnut chart to visualize the new 70/30 profit split. Sliders for price and utilization allow the client to explore revenue scenarios. Includes a profit-per-square-foot calculator.
      - Specifications & UX: Clear, icon-based list for technical requirements combined with a step-by-step visual timeline of the customer journey.
-     - Partnership: A summary of the key benefits and a special, exclusive "Founding Partnership" offer.
+     - Partnership: A summary of the key benefits and a special, exclusive "Founding Partnership" offer with a 90-day pilot term.
 -->
 <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 <html lang="en">
@@ -116,7 +116,7 @@
             <section id="cover" class="content-section active">
                 <div class="cover-page flex items-center justify-center p-8 md:p-20 text-center" style="min-height: 70vh;">
                     <div>
-                        <h1 class="text-4xl md:text-6xl font-bold mb-2">Brash Coffee Roasters X Boxed Office</h1>
+                        <h1 class="text-4xl md:text-6xl font-bold mb-2">Boxed Office</h1>
                         <p class="text-xl md:text-2xl text-secondary-text mb-8">A Partnership Proposal to Enhance Your Space & Create New Revenue</p>
                         <div class="text-lg text-primary mt-12 border-t border-b border-gray-300 py-4">
                             <p class="font-semibold">Prepared for:</p>
@@ -128,7 +128,7 @@
                              <p>Phillip Thornton & Seth Martin, Co-Founders</p>
                              <p>Boxed Office by Paydax</p>
                         </div>
-                        <p class="mt-8 text-sm text-secondary-text">Date: July 17, 2025</p>
+                        <p class="mt-8 text-sm text-secondary-text">Date: July 18, 2025</p>
                     </div>
                 </div>
             </section>
@@ -160,7 +160,7 @@
                             <ul class="text-sm text-secondary-text list-disc list-inside mt-2">
                                 <li>Based on 1 Boxed Office unit.</li>
                                 <li>Operating 10 hours/day, 30 days/month.</li>
-                                <li>Profit share is a special <strong>50/50 split</strong> for our Founding Partners.</li>
+                                <li>Profit share is a special <strong>70/30 split</strong>, created specifically for you as our Founding Partner.</li>
                             </ul>
                         </div>
                     </div>
@@ -173,11 +173,11 @@
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div class="bg-blue-50 p-4 rounded-lg text-center border border-blue-200">
-                                <h4 class="text-sm font-medium text-secondary-text">Brash Coffee's Share</h4>
+                                <h4 class="text-sm font-medium text-secondary-text">Brash Coffee's Share (30%)</h4>
                                 <p id="brash-coffee-share" class="text-2xl font-bold text-accent-color mt-1">$0</p>
                             </div>
                             <div class="bg-gray-50 p-4 rounded-lg text-center border">
-                                <h4 class="text-sm font-medium text-secondary-text">Boxed Office's Share</h4>
+                                <h4 class="text-sm font-medium text-secondary-text">Boxed Office's Share (70%)</h4>
                                 <p id="boxed-office-share" class="text-2xl font-bold text-accent-color mt-1">$0</p>
                             </div>
                         </div>
@@ -288,8 +288,7 @@
 
             <!-- Section 4: Partnership -->
             <section id="partnership" class="content-section p-8 md:p-12">
-                <h2 class="text-3xl font-bold mb-2 text-center">An Exclusive Founding Partnership Offer for Brash Coffee</h2>
-                <p class="text-secondary-text mb-8 max-w-3xl mx-auto text-center">We believe the best partnerships are built on mutual success. Because of Brash Coffee's strong brand and ideal locations, we are extending this unique, one-time invitation for you to become a Founding Partner. Our model is designed to be completely risk-free, allowing us to prove the value of Boxed Office before any long-term commitment.</p>
+                <h2 class="text-3xl font-bold mb-8 text-center">An Exclusive Founding Partnership Offer</h2>
                 
                 <div class="grid md:grid-cols-2 gap-8 text-left">
                     <div class="partnership-card p-6 rounded-lg">
@@ -317,8 +316,8 @@
                 <div class="mt-8 bg-blue-100 p-6 rounded-lg border border-blue-200">
                     <h3 class="text-xl font-semibold mb-3 text-center">Exclusive Founding Partnership Terms</h3>
                     <div class="text-center text-secondary-text">
-                        <p class="mb-2"><strong class="text-primary">Revenue Share:</strong> This is a one-time offer, exclusive to Brash Coffee. As our Founding Partner, you will receive a 50/50 revenue share from all proceeds after standard Stripe processing fees. This structure, not available to future partners, is designed to build a strong, mutually beneficial relationship from day one and reward you for being a first mover with us.</p>
-                        <p><strong class="text-primary">Term:</strong> This is an ongoing partnership with no long-term commitment. Either party may end the agreement at any time with just two weeks' notice, at which point we will remove the unit free of charge.</p>
+                        <p class="mb-2"><strong class="text-primary">Revenue Share:</strong> As our exclusive Founding Partner, you will receive a 70/30 revenue share from all proceeds after standard Stripe processing fees (70% to Boxed Office, 30% to Brash Coffee). This structure is designed to build a strong, mutually beneficial relationship from day one.</p>
+                        <p><strong class="text-primary">Term:</strong> We propose a 90-day pilot period to prove the value of the Boxed Office unit. If at the end of the 90 days you are not completely satisfied, we will remove the unit free of charge. After a successful pilot, we can discuss a longer-term agreement.</p>
                     </div>
                 </div>
             </section>
@@ -378,7 +377,7 @@
             function calculateAll() {
                 if (!priceSlider) return; 
 
-                // 1. Boxed Office Calculation (50/50 Split)
+                // 1. Boxed Office Calculation (70/30 Split)
                 const price = parseFloat(priceSlider.value);
                 const utilization = parseFloat(utilizationSlider.value) / 100;
                 const hoursOpen = 10;
@@ -390,8 +389,8 @@
                 const dailyHoursUsed = hoursOpen * utilization;
                 const totalMonthlyRevenue = price * dailyHoursUsed * daysOpen;
                 
-                const boxedOfficeShare = totalMonthlyRevenue * 0.5;
-                currentBrashCoffeeShare = totalMonthlyRevenue * 0.5;
+                const boxedOfficeShare = totalMonthlyRevenue * 0.7;
+                currentBrashCoffeeShare = totalMonthlyRevenue * 0.3;
                 
                 totalMonthlyOutput.textContent = formatCurrencyNoCents(totalMonthlyRevenue);
                 brashCoffeeShareOutput.textContent = formatCurrencyNoCents(currentBrashCoffeeShare);
